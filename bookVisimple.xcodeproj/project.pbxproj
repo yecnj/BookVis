@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B6098DFF20BE7DC30015CECE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098DFE20BE7DC30015CECE /* AppDelegate.swift */; };
+		B6098E0120BE7DC30015CECE /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098E0020BE7DC30015CECE /* RootViewController.swift */; };
+		B6098E0320BE7DC30015CECE /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098E0220BE7DC30015CECE /* DataViewController.swift */; };
+		B6098E0520BE7DC30015CECE /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098E0420BE7DC30015CECE /* ModelController.swift */; };
+		B6098E0820BE7DC30015CECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6098E0620BE7DC30015CECE /* Main.storyboard */; };
+		B6098E0A20BE7DC50015CECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6098E0920BE7DC50015CECE /* Assets.xcassets */; };
+		B6098E0D20BE7DC50015CECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6098E0B20BE7DC50015CECE /* LaunchScreen.storyboard */; };
+		B6098E1820BE7DC50015CECE /* bookVisimpleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098E1720BE7DC50015CECE /* bookVisimpleTests.swift */; };
+		B6098E2320BE7DC50015CECE /* bookVisimpleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098E2220BE7DC50015CECE /* bookVisimpleUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6098E1420BE7DC50015CECE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6098DF320BE7DC30015CECE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6098DFA20BE7DC30015CECE;
+			remoteInfo = bookVisimple;
+		};
+		B6098E1F20BE7DC50015CECE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6098DF320BE7DC30015CECE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6098DFA20BE7DC30015CECE;
+			remoteInfo = bookVisimple;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B6098DFB20BE7DC30015CECE /* bookVisimple.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bookVisimple.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6098DFE20BE7DC30015CECE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B6098E0020BE7DC30015CECE /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		B6098E0220BE7DC30015CECE /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		B6098E0420BE7DC30015CECE /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		B6098E0720BE7DC30015CECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B6098E0920BE7DC50015CECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B6098E0C20BE7DC50015CECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B6098E0E20BE7DC50015CECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6098E1320BE7DC50015CECE /* bookVisimpleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookVisimpleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6098E1720BE7DC50015CECE /* bookVisimpleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookVisimpleTests.swift; sourceTree = "<group>"; };
+		B6098E1920BE7DC50015CECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6098E1E20BE7DC50015CECE /* bookVisimpleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookVisimpleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6098E2220BE7DC50015CECE /* bookVisimpleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookVisimpleUITests.swift; sourceTree = "<group>"; };
+		B6098E2420BE7DC50015CECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B6098DF820BE7DC30015CECE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6098E1020BE7DC50015CECE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6098E1B20BE7DC50015CECE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B6098DF220BE7DC30015CECE = {
+			isa = PBXGroup;
+			children = (
+				B6098DFD20BE7DC30015CECE /* bookVisimple */,
+				B6098E1620BE7DC50015CECE /* bookVisimpleTests */,
+				B6098E2120BE7DC50015CECE /* bookVisimpleUITests */,
+				B6098DFC20BE7DC30015CECE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B6098DFC20BE7DC30015CECE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B6098DFB20BE7DC30015CECE /* bookVisimple.app */,
+				B6098E1320BE7DC50015CECE /* bookVisimpleTests.xctest */,
+				B6098E1E20BE7DC50015CECE /* bookVisimpleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6098DFD20BE7DC30015CECE /* bookVisimple */ = {
+			isa = PBXGroup;
+			children = (
+				B6098DFE20BE7DC30015CECE /* AppDelegate.swift */,
+				B6098E0020BE7DC30015CECE /* RootViewController.swift */,
+				B6098E0220BE7DC30015CECE /* DataViewController.swift */,
+				B6098E0420BE7DC30015CECE /* ModelController.swift */,
+				B6098E0620BE7DC30015CECE /* Main.storyboard */,
+				B6098E0920BE7DC50015CECE /* Assets.xcassets */,
+				B6098E0B20BE7DC50015CECE /* LaunchScreen.storyboard */,
+				B6098E0E20BE7DC50015CECE /* Info.plist */,
+			);
+			path = bookVisimple;
+			sourceTree = "<group>";
+		};
+		B6098E1620BE7DC50015CECE /* bookVisimpleTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6098E1720BE7DC50015CECE /* bookVisimpleTests.swift */,
+				B6098E1920BE7DC50015CECE /* Info.plist */,
+			);
+			path = bookVisimpleTests;
+			sourceTree = "<group>";
+		};
+		B6098E2120BE7DC50015CECE /* bookVisimpleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B6098E2220BE7DC50015CECE /* bookVisimpleUITests.swift */,
+				B6098E2420BE7DC50015CECE /* Info.plist */,
+			);
+			path = bookVisimpleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B6098DFA20BE7DC30015CECE /* bookVisimple */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6098E2720BE7DC50015CECE /* Build configuration list for PBXNativeTarget "bookVisimple" */;
+			buildPhases = (
+				B6098DF720BE7DC30015CECE /* Sources */,
+				B6098DF820BE7DC30015CECE /* Frameworks */,
+				B6098DF920BE7DC30015CECE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bookVisimple;
+			productName = bookVisimple;
+			productReference = B6098DFB20BE7DC30015CECE /* bookVisimple.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B6098E1220BE7DC50015CECE /* bookVisimpleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6098E2A20BE7DC50015CECE /* Build configuration list for PBXNativeTarget "bookVisimpleTests" */;
+			buildPhases = (
+				B6098E0F20BE7DC50015CECE /* Sources */,
+				B6098E1020BE7DC50015CECE /* Frameworks */,
+				B6098E1120BE7DC50015CECE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6098E1520BE7DC50015CECE /* PBXTargetDependency */,
+			);
+			name = bookVisimpleTests;
+			productName = bookVisimpleTests;
+			productReference = B6098E1320BE7DC50015CECE /* bookVisimpleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B6098E1D20BE7DC50015CECE /* bookVisimpleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6098E2D20BE7DC50015CECE /* Build configuration list for PBXNativeTarget "bookVisimpleUITests" */;
+			buildPhases = (
+				B6098E1A20BE7DC50015CECE /* Sources */,
+				B6098E1B20BE7DC50015CECE /* Frameworks */,
+				B6098E1C20BE7DC50015CECE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6098E2020BE7DC50015CECE /* PBXTargetDependency */,
+			);
+			name = bookVisimpleUITests;
+			productName = bookVisimpleUITests;
+			productReference = B6098E1E20BE7DC50015CECE /* bookVisimpleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B6098DF320BE7DC30015CECE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = yeonj;
+				TargetAttributes = {
+					B6098DFA20BE7DC30015CECE = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					B6098E1220BE7DC50015CECE = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = B6098DFA20BE7DC30015CECE;
+					};
+					B6098E1D20BE7DC50015CECE = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = B6098DFA20BE7DC30015CECE;
+					};
+				};
+			};
+			buildConfigurationList = B6098DF620BE7DC30015CECE /* Build configuration list for PBXProject "bookVisimple" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B6098DF220BE7DC30015CECE;
+			productRefGroup = B6098DFC20BE7DC30015CECE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B6098DFA20BE7DC30015CECE /* bookVisimple */,
+				B6098E1220BE7DC50015CECE /* bookVisimpleTests */,
+				B6098E1D20BE7DC50015CECE /* bookVisimpleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B6098DF920BE7DC30015CECE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6098E0D20BE7DC50015CECE /* LaunchScreen.storyboard in Resources */,
+				B6098E0A20BE7DC50015CECE /* Assets.xcassets in Resources */,
+				B6098E0820BE7DC30015CECE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6098E1120BE7DC50015CECE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6098E1C20BE7DC50015CECE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B6098DF720BE7DC30015CECE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6098E0120BE7DC30015CECE /* RootViewController.swift in Sources */,
+				B6098E0520BE7DC30015CECE /* ModelController.swift in Sources */,
+				B6098E0320BE7DC30015CECE /* DataViewController.swift in Sources */,
+				B6098DFF20BE7DC30015CECE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6098E0F20BE7DC50015CECE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6098E1820BE7DC50015CECE /* bookVisimpleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6098E1A20BE7DC50015CECE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6098E2320BE7DC50015CECE /* bookVisimpleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6098E1520BE7DC50015CECE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6098DFA20BE7DC30015CECE /* bookVisimple */;
+			targetProxy = B6098E1420BE7DC50015CECE /* PBXContainerItemProxy */;
+		};
+		B6098E2020BE7DC50015CECE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6098DFA20BE7DC30015CECE /* bookVisimple */;
+			targetProxy = B6098E1F20BE7DC50015CECE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B6098E0620BE7DC30015CECE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6098E0720BE7DC30015CECE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B6098E0B20BE7DC50015CECE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6098E0C20BE7DC50015CECE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B6098E2520BE7DC50015CECE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B6098E2620BE7DC50015CECE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B6098E2820BE7DC50015CECE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bookVisimple/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lab.ivader.bookVisimple;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6098E2920BE7DC50015CECE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bookVisimple/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lab.ivader.bookVisimple;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B6098E2B20BE7DC50015CECE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bookVisimpleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lab.ivader.bookVisimpleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookVisimple.app/bookVisimple";
+			};
+			name = Debug;
+		};
+		B6098E2C20BE7DC50015CECE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bookVisimpleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lab.ivader.bookVisimpleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bookVisimple.app/bookVisimple";
+			};
+			name = Release;
+		};
+		B6098E2E20BE7DC50015CECE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bookVisimpleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lab.ivader.bookVisimpleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = bookVisimple;
+			};
+			name = Debug;
+		};
+		B6098E2F20BE7DC50015CECE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bookVisimpleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lab.ivader.bookVisimpleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = bookVisimple;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B6098DF620BE7DC30015CECE /* Build configuration list for PBXProject "bookVisimple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6098E2520BE7DC50015CECE /* Debug */,
+				B6098E2620BE7DC50015CECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6098E2720BE7DC50015CECE /* Build configuration list for PBXNativeTarget "bookVisimple" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6098E2820BE7DC50015CECE /* Debug */,
+				B6098E2920BE7DC50015CECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6098E2A20BE7DC50015CECE /* Build configuration list for PBXNativeTarget "bookVisimpleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6098E2B20BE7DC50015CECE /* Debug */,
+				B6098E2C20BE7DC50015CECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6098E2D20BE7DC50015CECE /* Build configuration list for PBXNativeTarget "bookVisimpleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6098E2E20BE7DC50015CECE /* Debug */,
+				B6098E2F20BE7DC50015CECE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B6098DF320BE7DC30015CECE /* Project object */;
+}
