@@ -73,6 +73,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         var viewControllers: [UIViewController]
 
         let indexOfCurrentViewController = self.modelController.indexOfViewController(currentViewController)
+        print(indexOfCurrentViewController)
         if (indexOfCurrentViewController == 0) || (indexOfCurrentViewController % 2 == 0) {
             let nextViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerAfter: currentViewController)
             viewControllers = [currentViewController, nextViewController!]
