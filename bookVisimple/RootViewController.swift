@@ -11,7 +11,8 @@ import UIKit
 class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
     var pageViewController: UIPageViewController?
-
+    var pageViewSleep: Bool = false
+    var pageViewSleepTime: Date = Date()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,9 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         self.pageViewController!.view.frame = pageViewRect
 
         self.pageViewController!.didMove(toParentViewController: self)
+        
+        // Start Applepen detect
+        self.scheduledTimerWithTimeInterval()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +48,36 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    // Applepen detect codes
+    var timer = Timer()
+    
+    func scheduledTimerWithTimeInterval(){
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateCounting), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounting(){
+        print(pageViewSleep)
+        if(!pageViewSleep){
+            self.pageViewController!.dataSource = self.modelController
+            self.pageViewController!.delegate = self
+        } else {
+            print(Date().timeIntervalSince(self.pageViewSleepTime))
+            if (Date().timeIntervalSince(self.pageViewSleepTime) > 0.2){
+                self.pageViewSleep = false
+            }
+        }
+    }
+    
+    override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
+        self.pageViewController!.dataSource = nil
+        self.pageViewController!.delegate = nil
+        self.pageViewSleep = true
+        self.pageViewSleepTime = Date()
+    }
+    
+    
     var modelController: ModelController {
         // Return the model controller object, creating it if necessary.
         // In more complex implementations, the model controller may be passed to the view controller.
