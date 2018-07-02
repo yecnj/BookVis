@@ -12,7 +12,7 @@ class DataViewController: UIViewController {
 
     @IBOutlet weak var dataLabel: UILabel!
     var dataObject: String = ""
-
+    var page_contents = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()

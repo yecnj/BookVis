@@ -21,10 +21,24 @@ import UIKit
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
     var pageData: [String] = []
-
+    var book_contents = ""
 
     override init() {
         super.init()
+        
+        // Load text file
+        if let filepath = Bundle.main.path(forResource: "file", ofType: "txt") {
+            do {
+                book_contents = try String(contentsOfFile: filepath)
+                print("file.txt Load Success!!")
+            } catch {
+                print("file.txt Found but Cannot Load!!")
+            }
+        } else {
+            // example.txt not found!
+            print("file.txt Not Found!!")
+        }
+        
         // Create the data model.
         let dateFormatter = DateFormatter()
         pageData = dateFormatter.monthSymbols
