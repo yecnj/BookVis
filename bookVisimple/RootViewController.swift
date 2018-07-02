@@ -10,6 +10,8 @@ import UIKit
 
 class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
+    @IBOutlet weak var ToolBar: UIToolbar!
+    
     var pageViewController: UIPageViewController?
     var pageViewSleep: Bool = false
     var pageViewSleepTime: Date = Date()
@@ -29,7 +31,10 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
         self.addChildViewController(self.pageViewController!)
         self.view.addSubview(self.pageViewController!.view)
-
+        
+        // Add ToolBar
+        self.view.addSubview(ToolBar)
+        
         // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
         var pageViewRect = self.view.bounds
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -58,12 +63,12 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     }
     
     @objc func updateCounting(){
-        print(pageViewSleep)
+//        print(pageViewSleep)
         if(!pageViewSleep){
             self.pageViewController!.dataSource = self.modelController
             self.pageViewController!.delegate = self
         } else {
-            print(Date().timeIntervalSince(self.pageViewSleepTime))
+//            print(Date().timeIntervalSince(self.pageViewSleepTime))
             if (Date().timeIntervalSince(self.pageViewSleepTime) > 0.2){
                 self.pageViewSleep = false
             }
