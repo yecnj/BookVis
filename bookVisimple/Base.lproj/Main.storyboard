@@ -68,6 +68,7 @@
                         <viewLayoutGuide key="safeArea" id="K9I-jD-KjA"/>
                     </view>
                     <connections>
+                        <outlet property="PageTextView" destination="MNn-Ea-bvO" id="moe-O0-TcN"/>
                         <outlet property="dataLabel" destination="cF2-Le-7mQ" id="3EH-BK-JV6"/>
                     </connections>
                 </viewController>

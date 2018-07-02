@@ -11,6 +11,8 @@ import UIKit
 class DataViewController: UIViewController {
 
     @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var PageTextView: UITextView!
+    
     var dataObject: String = ""
     var page_contents = ""
 
@@ -27,6 +29,7 @@ class DataViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.dataLabel!.text = dataObject
+        self.PageTextView.text = page_contents
     }
 
 
