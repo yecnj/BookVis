@@ -36,16 +36,44 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-Le-7mQ">
                                 <rect key="frame" x="20" y="20" width="984" height="17"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7">
                                 <rect key="frame" x="20" y="45" width="984" height="1307"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EHm-Hu-W0l">
+                                        <rect key="frame" x="8" y="8" width="968" height="1291"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <mutableString key="text">코드를 설명 드리겠습니다. viewDidLoad 에서 ContentViewController 에 들어갈 데이터를 정의하고 스토리 보드에 있는
+
+pageViewController 를 불러와 화면을 정의하고 처음나타날 ContentViewController를 설정 ViewController에 추가하는 작업을 진행 했습니다.
+
+위와같이 하면 처음의 화면이 나타나게 되고 스와이프시 viewControllerBeforeViewController, viewControllerAfterViewController 로 함수가 호출 됩니다.
+
+함수가 호출되면서 이전과 , 이후의 화면을 미리 로드하는것을 볼수 있습니다. 최하단의 함수는 인디케이터를 구성하기 위한 함수 입니다.
+
+위와같이 구성하면 아래와 같은 화면을 볼수 있습니다. 위 코드로 모든코드를 대체할수 없기에 샘플코드를 첨부하도록 하겠습니다.
+</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailingMargin" secondItem="EHm-Hu-W0l" secondAttribute="trailing" id="08J-5l-6ft"/>
+                                    <constraint firstItem="EHm-Hu-W0l" firstAttribute="top" secondItem="s1b-V9-EN7" secondAttribute="topMargin" id="6s5-jY-xO6"/>
+                                    <constraint firstItem="EHm-Hu-W0l" firstAttribute="bottom" secondItem="s1b-V9-EN7" secondAttribute="bottomMargin" id="Eqc-3r-YFJ"/>
+                                    <constraint firstItem="EHm-Hu-W0l" firstAttribute="leading" secondItem="s1b-V9-EN7" secondAttribute="leadingMargin" id="QZP-7o-CqL"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="s1b-V9-EN7" secondAttribute="trailing" constant="20" symbolic="YES" id="333-Jl-G0r"/>
                             <constraint firstItem="s1b-V9-EN7" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="20" symbolic="YES" id="CIC-qa-9gW"/>
@@ -59,11 +87,12 @@
                     </view>
                     <connections>
                         <outlet property="dataLabel" destination="cF2-Le-7mQ" id="3EH-BK-JV6"/>
+                        <outlet property="textView" destination="EHm-Hu-W0l" id="tQ9-3t-D4y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GmD-Rr-ZGN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-447" y="-273"/>
+            <point key="canvasLocation" x="-447.07031249999994" y="-273.20644216691068"/>
         </scene>
     </scenes>
 </document>

@@ -49,7 +49,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     }
 
     // MARK: - Page View Controller Data Source
-
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = self.indexOfViewController(viewController as! DataViewController)
         if (index == 0) || (index == NSNotFound) {
