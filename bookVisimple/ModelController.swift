@@ -20,41 +20,53 @@ import UIKit
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
 
-    var pageData: [String] = []
-    var book_contents = ""
+//    var pageData: [String] = BookContentsList //[String](repeating: "", count: 5)
+    var contentsList: [String?] = [String?](repeating: nil, count: 64)
+//    var book_contents = ""
 
     override init() {
         super.init()
         
         // Load text file
-        if let filepath = Bundle.main.path(forResource: "file", ofType: "txt") {
-            do {
-                book_contents = try String(contentsOfFile: filepath)
-                print("file.txt Load Success!!")
-            } catch {
-                print("file.txt Found but Cannot Load!!")
-            }
-        } else {
-            // example.txt not found!
-            print("file.txt Not Found!!")
-        }
+//        if let filepath = Bundle.main.path(forResource: "file1", ofType: "txt") {
+//            do {
+//                book_contents = try String(contentsOfFile: filepath)
+//                print("file.txt Load Success!!")
+//            } catch {
+//                print("file.txt Found but Cannot Load!!")
+//            }
+//        } else {
+//            // example.txt not found!
+//            print("file.txt Not Found!!")
+//        }
         
         // Create the data model.
-        let dateFormatter = DateFormatter()
-        pageData = dateFormatter.monthSymbols
+//        let dateFormatter = DateFormatter()
+//        pageData = dateFormatter.monthSymbols
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
         // Return the data view controller for the given index.
-        if (self.pageData.count == 0) || (index >= self.pageData.count) {
+        if (BookContentsList.count == 0) || (index >= BookContentsList.count) {
             return nil
         }
 
         // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
         
-        dataViewController.dataObject = self.pageData[index]
-        dataViewController.page_contents = book_contents
+//        dataViewController.dataObject = self.pageData[index]
+//        if let now = contentsList[index] {
+//            dataViewController.page_contents = now
+//        }
+//        else {
+//            let textView = dataViewController.PageTextView!
+//            while textView.contentSize.height < textView.bounds.height {
+//
+//            }
+//        }
+        dataViewController.page_contents = BookContentsList[index]
+//        dataViewController.page_contents = self.book_contents
+
         
         return dataViewController
     }
@@ -62,7 +74,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
     func indexOfViewController(_ viewController: DataViewController) -> Int {
         // Return the index of the given data view controller.
         // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-        return pageData.index(of: viewController.dataObject) ?? NSNotFound
+        return BookContentsList.index(of: viewController.page_contents) ?? NSNotFound
     }
 
     // MARK: - Page View Controller Data Source
@@ -84,7 +96,7 @@ class ModelController: NSObject, UIPageViewControllerDataSource {
         }
         
         index += 1
-        if index == self.pageData.count {
+        if index == BookContentsList.count {
             return nil
         }
         return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)

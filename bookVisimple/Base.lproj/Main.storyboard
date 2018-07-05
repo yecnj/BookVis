@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="703-4V-yAM">
     <device id="ipad12_9" orientation="landscape">
-        <adaptation id="fullscreen"/>
+        <adaptation id="splitview1_2"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,66 +15,84 @@
             <objects>
                 <viewController id="703-4V-yAM" customClass="RootViewController" customModule="bookVisimple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="502-Ir-ELC">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="678" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8f-us-5vW">
-                                <rect key="frame" x="0.0" y="980" width="1366" height="44"/>
+                                <rect key="frame" x="0.0" y="980" width="678" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Item" id="iyM-4W-Yij"/>
-                                </items>
+                                <items/>
                             </toolbar>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9EG-Gz-eKt">
+                                <rect key="frame" x="-2" y="951" width="1370" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="thumbTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="iAZ-4m-2z3"/>
                     </view>
                     <connections>
+                        <outlet property="PageScroll" destination="9EG-Gz-eKt" id="IJR-Ob-7oA"/>
                         <outlet property="ToolBar" destination="P8f-us-5vW" id="bvp-E5-wqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3h-pU-vEd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1092" y="-273"/>
+            <point key="canvasLocation" x="-1092.3865300146413" y="-273.046875"/>
         </scene>
         <!--Data View Controller-->
         <scene sceneID="snT-py-3hH">
             <objects>
                 <viewController storyboardIdentifier="DataViewController" id="S4R-Ja-viH" customClass="DataViewController" customModule="bookVisimple" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZwX-cT-FIQ">
-                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="678" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cF2-Le-7mQ">
-                                <rect key="frame" x="20" y="20" width="1326" height="17"/>
+                                <rect key="frame" x="20" y="20" width="638" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1b-V9-EN7">
-                                <rect key="frame" x="20" y="45" width="1326" height="878"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="MNn-Ea-bvO">
-                                        <rect key="frame" x="8" y="0.0" width="627" height="878"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" contentInsetAdjustmentBehavior="never" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MNn-Ea-bvO">
+                                <rect key="frame" x="20" y="73" width="651" height="878"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <edgeInsets key="layoutMargins" top="12" left="12" bottom="12" right="12"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <mutableString key="content">  오늘, 어머니가 죽었다. 아니면 아마 어제였는지도 모른다. 양로원으로부터 전보 한 통을 받아다. '모친 사망. 내일 장례식. 경백(敬白),' 그건 아무런 의미가 없다. 아마 어제였을 것이다.
+
+ 양로원은 알제이 시에서 팔십 킬로미터 떨어진 마랑고에 있다. 두 시에 버스를 탄다면 해가 지기 전에 도착할 수 있을 것이다. 그러면 그곳에서 밤을 새우고 내일 저녁쯤에는 돌아올 수 있다. 나는 사장에게 이틀 동안의 휴가를 신청했는데, 그로서도 이런 저런 변명을 늘어놓으며 휴가를 거절할 수는 없었다. 그러나 그는 달갑지 않은 눈치였다. 나는 이런 말까지도 했다. "그건 제 잘못이 아닙니다." 그는 아무런 대꾸도 하지 않았다. 그제야 비로소 나는 그런 말은 하지 않았어야 했다는 것을 깨달았다. 요컨대, 나는 변명할 필요도 없었던 것이다. 오히려 그가 나에게 애도의 말이라도 해 줘야 마땅했다. 하지만 모레, 내가 상장(喪章)을 단 것을 보면 틀림없이 무슨 말이 있을 것이다. 지금으로서는, 어쩐지 어머니가 죽은 것 같지가 않다. 하지만, 장례식이 끝나고 나면, 그 죽음은 기결 사건이 되고, 모든 것이 보다 의례적인 격식을 갖추게 될 것이다.
+
+ 나는 두 시에 버스를 탔다. 날씨는 몹시 무더웠다. 나는 늘상 하던 대로 셀레스트의 레스토랑에서 점심을 먹었다. 그들은 모두 나를 매우 측은하게 여겼으며, 셀레스트는 "어머니는 오직 한 분뿐이죠."라며 나를 위로했다.
+
+ 내가 레스토랑을 나올 때 모두들 나를 문까지 바래다 주었다. 나는 좀 경솔했었다. 왜냐하면 도중에서야 겨우 생각이 나서 엠마뉘엘에게 들러 검정 넥타이와 상장을 빌어야 했으니까 말이다. 엠마뉘엘은 서너 달 전에 그의 삼촌을 잃었다.
+
+ 나는 출발 시간에 늦지 않기 위해 달렸다. 내가 깜빡 잠이 든 것은 아마 그러한 서두름, 달음박질, 그리고 그에 덧붙여 차의 덜커덩거림, 기름 냄새, 도로와 하늘에서 반사하는 햇빛, 이런 모든 것들 때문이었다. 나는 버스에서 거의 내내 잤다. 눈을 떴을 때, 나는 어떤 군인의 어깨에 기대 있었는데, 그는 웃으면서 멀리서 오느냐고 물어 보았다. 나는 길게 말하고 싶지 않아서 그렇다고 대답해 버렸다.
+</mutableString>
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="18" name="NanumGothic"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <font key="NSOriginalFont" size="18" name="NanumGothic"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" lineSpacing="10" defaultTabInterval="35" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.97826086960000003" green="0.91848131079999995" blue="0.73914263440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="s1b-V9-EN7" secondAttribute="trailing" constant="20" symbolic="YES" id="333-Jl-G0r"/>
-                            <constraint firstItem="s1b-V9-EN7" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="20" symbolic="YES" id="CIC-qa-9gW"/>
                             <constraint firstItem="cF2-Le-7mQ" firstAttribute="top" secondItem="K9I-jD-KjA" secondAttribute="top" symbolic="YES" id="NrC-c8-v1I"/>
                             <constraint firstItem="cF2-Le-7mQ" firstAttribute="leading" secondItem="ZwX-cT-FIQ" secondAttribute="leading" constant="20" symbolic="YES" id="PnF-O8-Bso"/>
                             <constraint firstAttribute="trailing" secondItem="cF2-Le-7mQ" secondAttribute="trailing" constant="20" symbolic="YES" id="cCk-mG-gz5"/>
-                            <constraint firstItem="s1b-V9-EN7" firstAttribute="top" secondItem="cF2-Le-7mQ" secondAttribute="bottom" constant="8" symbolic="YES" id="kQJ-gh-hu4"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="s1b-V9-EN7" secondAttribute="bottom" constant="14" id="rGH-Fr-IeC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="K9I-jD-KjA"/>
                     </view>

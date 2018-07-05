@@ -12,6 +12,7 @@ class DataViewController: UIViewController {
 
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var PageTextView: UITextView!
+//    @IBOutlet weak var ContentsView: UIView!
     
     var dataObject: String = ""
     var page_contents = ""
@@ -19,6 +20,8 @@ class DataViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        ContentsView.frame.size.height = 0.7
+        PageTextView.textContainerInset = UIEdgeInsets(top: 30, left: 30, bottom: 15, right: 30)
     }
 
     override func didReceiveMemoryWarning() {
