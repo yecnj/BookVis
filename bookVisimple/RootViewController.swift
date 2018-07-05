@@ -168,10 +168,8 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     }
 
     func goToNextPage() {
-        let currentLeftViewController = self.pageViewController!.viewControllers![0] as! DataViewController
+        let currentRightViewController = self.pageViewController!.viewControllers![1] as! DataViewController
         var viewControllers: [UIViewController]
-        
-        let currentRightViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerAfter: currentLeftViewController)!
         
         guard let nextLeftViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerAfter: currentRightViewController) else { return }
         guard let nextRightViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerAfter: nextLeftViewController) else { return }
@@ -187,7 +185,7 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         
         guard let prevRightViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerBefore: currentLeftViewController) else { return }
         guard let prevLeftViewController = self.modelController.pageViewController(self.pageViewController!, viewControllerBefore: prevRightViewController) else { return }
-        
+
         viewControllers = [prevLeftViewController, prevRightViewController]
         
         self.pageViewController!.setViewControllers(viewControllers, direction: .reverse, animated: true, completion: {done in })
