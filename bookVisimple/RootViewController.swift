@@ -12,11 +12,15 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
 
     @IBOutlet weak var ToolBar: UIToolbar!
     @IBOutlet weak var PageScroll: UISlider!
+    @IBOutlet weak var nowIndex: UIBarButtonItem!
     
     var pageViewController: UIPageViewController?
     var pageViewSleep: Bool = false
     var pageViewSleepTime: Date = Date()
 
+    var prev_index: Int = 0
+    var now_index: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -29,22 +33,19 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         self.pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: false, completion: {done in })
 
         self.pageViewController!.dataSource = self.modelController
+        self.pageViewController!.gestureRecognizers[0].addTarget(self, action: #selector(updateScrollBar2))
 
         self.addChildViewController(self.pageViewController!)
         self.view.addSubview(self.pageViewController!.view)
         
         // Add ToolBar
         self.view.addSubview(ToolBar)
-        let img1 = resizeImage(image: UIImage(named: "highlighter_icon.png")!, newWidth: 50)
-        let item1 = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(goPreviousPage))
-        let item2 = UIBarButtonItem(title: ">", style: .plain, target: self, action: #selector(goNextPage))
-        let item3 = UIBarButtonItem(image:  img1, style: .plain, target: self, action: #selector(startAction))
-        ToolBar.items?.append(item1)
-        ToolBar.items?.append(item2)
-        ToolBar.items?.append(item3)
+        ToolBar.items![0].title = "1  / \(BookContentsList.count)"
+        PageScroll.isContinuous = true
+        PageScroll.minimumValue = 0
+        PageScroll.maximumValue = Float(BookContentsList.count - 1)
+        PageScroll.addTarget(self, action: #selector(valueChanged), for: .valueChanged)
         
-        // Add Scroll Bar
-        self.view.addSubview(PageScroll)
         
         // Set the page view controller's bounds using an inset rect so that self's view is visible around the edges of the pages.
         var pageViewRect = self.view.bounds
@@ -60,12 +61,10 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     }
     
     func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-        
         let scale = newWidth / image.size.width
         let newHeight = image.size.height * scale
         
         UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        
         
         image.draw(in: CGRect(x: 0, y: 0,width: newWidth, height: newHeight))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -74,20 +73,37 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         return newImage!
     }
     
+    // To make the value of PageScroll discrete
     @objc
-    func startAction(barButtonItem: UIBarButtonItem) {
-        // TODO
-        print("Button Pressed!")
+    func valueChanged(sender: UISlider) {
+        sender.setValue(roundf(PageScroll.value), animated: true)
+        self.now_index = Int(sender.value)
+        ToolBar.items![0].title = "\(self.now_index + 1)  / \(BookContentsList.count)"
+        if now_index != prev_index {
+            let diff = now_index - prev_index
+            if (diff > 0) && (prev_index % 2 == 1) {
+                goToNextPage()
+            }
+            else if (diff < 0) && (prev_index % 2 == 0) {
+                goToPreviousPage()
+            }
+            prev_index = now_index
+        }
     }
 
     @objc
-    func goPreviousPage(barButtonItem: UIBarButtonItem) {
-        goToPreviousPage()
+    func updateScrollBar2(sender: UIGestureRecognizer) {
+        if sender.state == .ended {
+            let viewController = self.pageViewController!.viewControllers![0]
+            let index = self.modelController.indexOfViewController(viewController as! DataViewController)
+            updateScrollBar(index)
+        }
     }
     
-    @objc
-    func goNextPage(barButtonItem: UIBarButtonItem) {
-        goToNextPage()
+    func updateScrollBar(_ _now_index: Int) {
+        PageScroll.value = Float(_now_index)
+        self.now_index = _now_index
+        ToolBar.items![0].title = "\(self.now_index + 1)  / \(BookContentsList.count)"
     }
     
     override func didReceiveMemoryWarning() {
