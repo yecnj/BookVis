@@ -19,87 +19,69 @@ import UIKit
 
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
-
-//    var pageData: [String] = BookContentsList //[String](repeating: "", count: 5)
     var contentsList: [String?] = [String?](repeating: nil, count: 64)
-//    var book_contents = ""
+    var ImageContentsList = [UIImage?](repeatElement(nil, count: 6))
 
     override init() {
         super.init()
-        
-        // Load text file
-//        if let filepath = Bundle.main.path(forResource: "file1", ofType: "txt") {
-//            do {
-//                book_contents = try String(contentsOfFile: filepath)
-//                print("file.txt Load Success!!")
-//            } catch {
-//                print("file.txt Found but Cannot Load!!")
-//            }
-//        } else {
-//            // example.txt not found!
-//            print("file.txt Not Found!!")
-//        }
-        
-        // Create the data model.
-//        let dateFormatter = DateFormatter()
-//        pageData = dateFormatter.monthSymbols
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
-        // Return the data view controller for the given index.
         if (BookContentsList.count == 0) || (index >= BookContentsList.count) {
             return nil
         }
 
-        // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
-        
-//        dataViewController.dataObject = self.pageData[index]
-//        if let now = contentsList[index] {
-//            dataViewController.page_contents = now
-//        }
-//        else {
-//            let textView = dataViewController.PageTextView!
-//            while textView.contentSize.height < textView.bounds.height {
-//
-//            }
-//        }
         dataViewController.page_contents = BookContentsList[index]
-//        dataViewController.page_contents = self.book_contents
-
         
         return dataViewController
     }
 
     func indexOfViewController(_ viewController: DataViewController) -> Int {
-        // Return the index of the given data view controller.
-        // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
         return BookContentsList.index(of: viewController.page_contents) ?? NSNotFound
     }
 
-    // MARK: - Page View Controller Data Source
-
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = self.indexOfViewController(viewController as! DataViewController)
+        
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
         
+        if (index % 2 == 0){
+            let rightViewController = pageViewController.viewControllers![1] as! DataViewController
+            ImageContentsList[index + 1] = rightViewController.drawView?.image
+            ImageContentsList[index] = (viewController as! DataViewController).drawView?.image
+        }
+        
         index -= 1
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        
+        let loadViewController = self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        loadViewController!.preparedDraw = ImageContentsList[index]
+        return loadViewController
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var index = self.indexOfViewController(viewController as! DataViewController)
+        
         if index == NSNotFound {
             return nil
+        }
+        
+        if (index % 2 == 1){
+            let leftViewController = pageViewController.viewControllers![0] as! DataViewController
+            ImageContentsList[index - 1] = leftViewController.drawView?.image
+            ImageContentsList[index] = (viewController as! DataViewController).drawView?.image
         }
         
         index += 1
         if index == BookContentsList.count {
             return nil
         }
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        
+        let loadViewController = self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        loadViewController!.preparedDraw = ImageContentsList[index]
+        return loadViewController
     }
 
 }

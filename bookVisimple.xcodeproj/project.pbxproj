@@ -20,6 +20,8 @@
 		B6098E0D20BE7DC50015CECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6098E0B20BE7DC50015CECE /* LaunchScreen.storyboard */; };
 		B6098E1820BE7DC50015CECE /* bookVisimpleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098E1720BE7DC50015CECE /* bookVisimpleTests.swift */; };
 		B6098E2320BE7DC50015CECE /* bookVisimpleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6098E2220BE7DC50015CECE /* bookVisimpleUITests.swift */; };
+		B678F59C20EE80350066019C /* drawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678F59B20EE80350066019C /* drawView.swift */; };
+		B678F59E20EE82350066019C /* ImageContentsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B678F59D20EE82350066019C /* ImageContentsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		B6098E1E20BE7DC50015CECE /* bookVisimpleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bookVisimpleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6098E2220BE7DC50015CECE /* bookVisimpleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookVisimpleUITests.swift; sourceTree = "<group>"; };
 		B6098E2420BE7DC50015CECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B678F59B20EE80350066019C /* drawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawView.swift; sourceTree = "<group>"; };
+		B678F59D20EE82350066019C /* ImageContentsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContentsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				A9C64D8220EE54B5008FD868 /* file2.txt */,
 				A9C64D8420EE54F4008FD868 /* BookContents.swift */,
 				A9C64D7C20EB8696008FD868 /* highlighter_icon.png */,
+				B678F59B20EE80350066019C /* drawView.swift */,
+				B678F59D20EE82350066019C /* ImageContentsList.swift */,
 			);
 			path = bookVisimple;
 			sourceTree = "<group>";
@@ -277,8 +283,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B678F59C20EE80350066019C /* drawView.swift in Sources */,
 				B6098E0120BE7DC30015CECE /* RootViewController.swift in Sources */,
 				B6098E0520BE7DC30015CECE /* ModelController.swift in Sources */,
+				B678F59E20EE82350066019C /* ImageContentsList.swift in Sources */,
 				B6098E0320BE7DC30015CECE /* DataViewController.swift in Sources */,
 				B6098DFF20BE7DC30015CECE /* AppDelegate.swift in Sources */,
 				A9C64D8520EE54F4008FD868 /* BookContents.swift in Sources */,
