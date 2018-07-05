@@ -59,7 +59,6 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
             self.pageViewController!.dataSource = self.modelController
             self.pageViewController!.delegate = self
         } else {
-            print(Date().timeIntervalSince(self.pageViewSleepTime))
             if (Date().timeIntervalSince(self.pageViewSleepTime) > 0.2){
                 self.pageViewSleep = false
             }

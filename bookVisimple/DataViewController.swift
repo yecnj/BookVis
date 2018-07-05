@@ -12,6 +12,7 @@ class DataViewController: UIViewController, UITextViewDelegate{
 
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var drawView: DrawingView!
 
     var dataString: String = ""
     var dataObject: String = ""
@@ -21,10 +22,9 @@ class DataViewController: UIViewController, UITextViewDelegate{
         textView.delegate = self
         textView.isEditable = false
         textView.isSelectable = true
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("began")
+        
+        drawView.isUserInteractionEnabled = true
+        drawView.backgroundColor = UIColor(white: 1, alpha: 0)
     }
 
     override func didReceiveMemoryWarning() {
