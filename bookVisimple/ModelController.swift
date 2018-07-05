@@ -19,58 +19,69 @@ import UIKit
 
 
 class ModelController: NSObject, UIPageViewControllerDataSource {
-
-    var pageData: [String] = []
-
+    var contentsList: [String?] = [String?](repeating: nil, count: 64)
+    var ImageContentsList = [UIImage?](repeatElement(nil, count: 6))
 
     override init() {
         super.init()
-        // Create the data model.
-        let dateFormatter = DateFormatter()
-        pageData = dateFormatter.monthSymbols
     }
 
     func viewControllerAtIndex(_ index: Int, storyboard: UIStoryboard) -> DataViewController? {
-        // Return the data view controller for the given index.
-        if (self.pageData.count == 0) || (index >= self.pageData.count) {
+        if (BookContentsList.count == 0) || (index >= BookContentsList.count) {
             return nil
         }
 
-        // Create a new view controller and pass suitable data.
         let dataViewController = storyboard.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
-        dataViewController.dataObject = self.pageData[index]
+        dataViewController.page_contents = BookContentsList[index]
+        
         return dataViewController
     }
 
     func indexOfViewController(_ viewController: DataViewController) -> Int {
-        // Return the index of the given data view controller.
-        // For simplicity, this implementation uses a static array of model objects and the view controller stores the model object; you can therefore use the model object to identify the index.
-        return pageData.index(of: viewController.dataObject) ?? NSNotFound
+        return BookContentsList.index(of: viewController.page_contents) ?? NSNotFound
     }
-
-    // MARK: - Page View Controller Data Source
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         var index = self.indexOfViewController(viewController as! DataViewController)
+        
         if (index == 0) || (index == NSNotFound) {
             return nil
         }
         
+        if (index % 2 == 0){
+            let rightViewController = pageViewController.viewControllers![1] as! DataViewController
+            ImageContentsList[index + 1] = rightViewController.drawView?.image
+            ImageContentsList[index] = (viewController as! DataViewController).drawView?.image
+        }
+        
         index -= 1
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        
+        let loadViewController = self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        loadViewController!.preparedDraw = ImageContentsList[index]
+        return loadViewController
     }
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         var index = self.indexOfViewController(viewController as! DataViewController)
+        
         if index == NSNotFound {
             return nil
         }
         
+        if (index % 2 == 1){
+            let leftViewController = pageViewController.viewControllers![0] as! DataViewController
+            ImageContentsList[index - 1] = leftViewController.drawView?.image
+            ImageContentsList[index] = (viewController as! DataViewController).drawView?.image
+        }
+        
         index += 1
-        if index == self.pageData.count {
+        if index == BookContentsList.count {
             return nil
         }
-        return self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        
+        let loadViewController = self.viewControllerAtIndex(index, storyboard: viewController.storyboard!)
+        loadViewController!.preparedDraw = ImageContentsList[index]
+        return loadViewController
     }
 
 }
