@@ -105,13 +105,16 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
     }
     
     @objc func updateCounting(){
-//        print(pageViewSleep)
         if(!pageViewSleep){
             self.pageViewController!.dataSource = self.modelController
             self.pageViewController!.delegate = self
+            let leftView = self.pageViewController!.viewControllers![0] as! DataViewController
+            leftView.PageTextView.isUserInteractionEnabled = true
+            let rightView = self.pageViewController!.viewControllers![1] as! DataViewController
+            rightView.PageTextView.isUserInteractionEnabled = true
         } else {
-//            print(Date().timeIntervalSince(self.pageViewSleepTime))
             if (Date().timeIntervalSince(self.pageViewSleepTime) > 0.2){
+                print("changed")
                 self.pageViewSleep = false
             }
         }
@@ -122,6 +125,10 @@ class RootViewController: UIViewController, UIPageViewControllerDelegate {
         self.pageViewController!.delegate = nil
         self.pageViewSleep = true
         self.pageViewSleepTime = Date()
+        let leftView = self.pageViewController!.viewControllers![0] as! DataViewController
+        leftView.PageTextView.isUserInteractionEnabled = false
+        let rightView = self.pageViewController!.viewControllers![1] as! DataViewController
+        rightView.PageTextView.isUserInteractionEnabled = false
     }
     
     

@@ -8,10 +8,16 @@
 
 import UIKit
 
+class myTextView: UITextView{
+    override func touchesEstimatedPropertiesUpdated(_ touches: Set<UITouch>) {
+        print("touch")
+    }
+}
+
 class DataViewController: UIViewController {
 
     @IBOutlet weak var dataLabel: UILabel!
-    @IBOutlet weak var PageTextView: UITextView!
+    @IBOutlet weak var PageTextView: myTextView!
     var preparedDraw: UIImage?
     @IBOutlet weak var drawView: DrawingView!
     
@@ -23,6 +29,8 @@ class DataViewController: UIViewController {
         PageTextView.textContainerInset = UIEdgeInsets(top: 30, left: 30, bottom: 15, right: 30)
         drawView.image = preparedDraw
         drawView.isUserInteractionEnabled = true
+        PageTextView.isUserInteractionEnabled = false
+        PageTextView.isSelectable = true
     }
 
     override func didReceiveMemoryWarning() {
